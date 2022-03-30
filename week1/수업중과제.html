@@ -104,7 +104,21 @@
 
     <script>
       function action3() {
+        const select_mbti = document.getElementById("select3");
+        const mbti_value = select_mbti.value;
+        let mbti_list = []
 
+        for (let i=0; i < api_data.data.length; i++) {
+          if (mbti_value === api_data.data[i].mbti) {
+            mbti_list.push(api_data.data[i].tw_name)
+          }
+        }
+        if (mbti_list.length === 0) {
+          alert('해당되는 사람이 없습니다.')
+        }
+        else {
+          alert(mbti_list)
+        }
       }
     </script>
   </div>
