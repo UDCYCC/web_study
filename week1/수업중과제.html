@@ -59,7 +59,18 @@
 
     <script>
       function action2() {
-
+        const input_name = document.getElementById("input2");
+        const name = input_name.value;
+        let user_mbti = 0
+        for (let i=0; i < api_data.data.length; i++) {
+          if (api_data.data[i].tw_name === name) {
+            user_mbti = api_data.data[i].mbti
+          }
+        }
+        if (user_mbti === 0) {
+          alert('해당되는 사람이 없습니다.')
+        }
+        else { alert(user_mbti)}
       }
     </script>
   </div>
