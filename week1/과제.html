@@ -40,19 +40,27 @@
     <label for="select1">카테고리</label>
     <select name="select1" id="select1">
       <option value="">선택</option>
-      <option value="1">K-POP</option>
-      <option value="2">J-POP</option>
-      <option value="4">보컬로이드</option>
-      <option value="5">애니메이션&게임&OST</option>
-      <option value="6">Honeyworks</option>
-      <option value="7">우타이테 오리지널</option>
-      <option value="8">시드사운드</option>
+      <option value="K-POP">K-POP</option>
+      <option value="J-POP">J-POP</option>
+      <option value="보컬로이드">보컬로이드</option>
+      <option value="애니메이션&게임&OST">애니메이션&게임&OST</option>
+      <option value="Honeyworks">Honeyworks</option>
+      <option value="우타이테 오리지널">우타이테 오리지널</option>
+      <option value="시드사운드">시드사운드</option>
     </select>
     <button type="button" onclick="action1()">조회</button>
 
     <script>
       function action1() {
-
+        const select_category = document.getElementById("select1");
+        const category_value = select_category.value;
+        let category_count = 0
+        for (let i=0; i < api_data.length; i++) {
+          if (api_data[i].category_name === category_value) {
+            category_count += 1      
+          }
+        }
+      alert(category_value+' : '+category_count+'곡')
       }
     </script>
   </div>
