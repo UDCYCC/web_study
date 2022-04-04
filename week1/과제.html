@@ -91,7 +91,23 @@
 
     <script>
       function action3() {
-
+        const input_data = document.getElementById("input3").value;
+        let indexvalue_name = 0;
+        let indexvalue_singer = 0;
+        let search_value_name = []
+        let search_value_singer = []
+        for (let i = 0; i < api_data.length; i++) {
+          indexvalue_name = api_data[i].music_name.indexOf(input_data)
+          indexvalue_singer = api_data[i].author_name.indexOf(input_data)
+          if (indexvalue_name >= 0){
+            search_value_name.push(api_data[i].music_name)
+          }
+          else if (indexvalue_singer >= 0) {
+            search_value_singer.push(api_data[i].author_name)
+          }
+        }
+        alert('해당 글자가 포함된 곡명 : ' + search_value_name)
+        alert('해당 글자가 포함된 가수명 : ' + search_value_singer)
       }
     </script>
   </div>
