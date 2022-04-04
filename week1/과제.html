@@ -74,7 +74,8 @@
 
     <script>
       function action2() {
-
+        const random_value =Math.floor(Math.random()*api_data.length)
+        alert(api_data[random_value].music_name + ' - ' + api_data[random_value].author_name)
       }
     </script>
   </div>
